@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Mediapp.SplashMediapp">
+
+    <TextView
+        android:id="@+id/txtAño"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:text="2022"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:layout_weight="0"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="171dp"
+            android:layout_height="171dp"
+            android:src="@drawable/logorepartidor"/>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtMedi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Medi"
+                android:textColor="#4a85de"
+                android:textSize="60dp" />
+
+            <TextView
+                android:id="@+id/txtApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="app"
+                android:textColor="#3AB54A"
+                android:textSize="60dp"/>
+            
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtRepartidores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Repartidores"
+            android:textSize="20sp" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtDerechos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Todos los derechos reservados"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="10sp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>
