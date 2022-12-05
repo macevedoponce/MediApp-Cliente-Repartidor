@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_inicio">
+
+    <fragment
+        android:id="@+id/navigation_inicio"
+        android:name="acevedo.EvalFin.org.Mediapp.ui.InicioFragment"
+        android:label="@string/title_Inicio"
+        tools:layout="@layout/fragment_inicio" />
+
+    <fragment
+        android:id="@+id/navigation_categoria"
+        android:name="acevedo.EvalFin.org.Mediapp.ui.CategoriaFragment"
+        android:label="@string/title_categoria"
+        tools:layout="@layout/fragment_categoria" />
+
+    <fragment
+        android:id="@+id/navigation_cuenta"
+        android:name="acevedo.EvalFin.org.Mediapp.ui.CuentaFragment"
+        android:label="@string/title_cuenta"
+        tools:layout="@layout/fragment_cuenta" />
+</navigation>

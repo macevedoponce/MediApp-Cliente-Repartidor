@@ -1,0 +1,35 @@
+https://panel.lucushost.com/login
+acevedoponcevalery@gmail.com
+Abc123$Abc123$
+
+https://jrxvaljn.lucusvirtual.es/
+https://jrxvaljn.lucusvirtual.es/Mediapp/list_categorias.php
+https://jrxvaljn.lucusvirtual.es/Mediapp/Mediapp.apk
+
+----------------------
+PRODUCTO DE PRUEBA
+---------------------
+CODIGO:
+SKU 000071
+
+ID_CATEGORIA:
+7
+
+ESTADO:
+1
+
+NOMBRE
+Proteínas Trisource Polvo Sabor Vainilla - Pote 1360 G
+
+PRECIO:
+109.90
+
+STOK:
+100
+
+PRESENTACION:
+POTE 1360 G
+
+
+DESCRIPCION:
+Alimento protéico sobre la base de tres fuentes de proteína de la más alta calidad y mayor valor biológico. Indicado para satisfacer las necesidades de atletas contribuyendo en la generación de fuerza.

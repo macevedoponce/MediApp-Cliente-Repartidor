@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2022 a las 19:07:40
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 04-12-2022 a las 09:29:29
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `categorias` (
   `nombre` varchar(50) NOT NULL,
   `estado` int(11) NOT NULL,
   `imagen_url` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `categorias`
@@ -61,17 +61,39 @@ CREATE TABLE `det_venta` (
   `id_pedido` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `det_venta`
 --
 
 INSERT INTO `det_venta` (`id`, `id_pedido`, `id_producto`, `cantidad`) VALUES
-(1, 1, 1, 3),
-(2, 2, 11, 2),
-(3, 3, 2, 3),
-(4, 4, 19, 2);
+(1, 5, 2, 2),
+(2, 6, 12, 3),
+(3, 7, 19, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos_entregados`
+--
+
+CREATE TABLE `pedidos_entregados` (
+  `id` int(11) NOT NULL,
+  `id_pedido` int(11) NOT NULL,
+  `id_repartidor` int(11) DEFAULT NULL,
+  `img_url` text DEFAULT NULL,
+  `estado` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pedidos_entregados`
+--
+
+INSERT INTO `pedidos_entregados` (`id`, `id_pedido`, `id_repartidor`, `img_url`, `estado`) VALUES
+(1, 5, 3, 'imagenes/entregas/5.jpg', 2),
+(2, 6, 3, 'imagenes/entregas/6.jpg', 2),
+(3, 7, 3, 'imagenes/entregas/7.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -90,7 +112,7 @@ CREATE TABLE `productos` (
   `ruta_imagen` text NOT NULL,
   `estado` int(11) NOT NULL,
   `descripcion` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `productos`
@@ -129,7 +151,7 @@ CREATE TABLE `rol` (
   `nombre` varchar(50) NOT NULL,
   `descripcion` text NOT NULL,
   `estado` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -160,16 +182,16 @@ CREATE TABLE `user` (
   `tipo_user` int(11) NOT NULL,
   `tipo_documento` int(11) NOT NULL,
   `img_url` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `user`
 --
 
 INSERT INTO `user` (`id`, `documento`, `nombres`, `apPaterno`, `apMaterno`, `celular`, `f_nacimiento`, `genero`, `correo`, `password`, `tipo_user`, `tipo_documento`, `img_url`) VALUES
-(1, '41142091', 'Elizabeth Doris', 'Ponce', 'De la Cruz', '987137124', '1972-11-21', 0, 'dorisponce260872@gmail.com', '$2y$12$7FOP88oTPQEOXGMewR8Xw.LZOBL5e6Dj9dq6nEfun2pjUUJVjcFmq', 1, 0, 'https://w0.peakpx.com/wallpaper/92/942/HD-wallpaper-mujer-actriz-antiguo-chica-colombia-famosa-joker-modelo-starwars.jpg'),
-(2, '7645578', 'Mauricio ', 'navarro', 'perez ', '968575445', '2003-06-17', 1, 'repartidor@rep.com', '$2y$12$pHoL/SfvHfQJ9CoatEla.O11NANiCl0dc80OSb7CA5lsYgIDFDR0.', 2, 0, ''),
-(3, '76458545', 'pedro', 'Suazo ', 'Marticorena ', '954784565', '1976-03-30', 1, 'cliente@gmail.com', '$2y$12$AOcf5QRHWlybCjXSWZG71u4TwHc.Rwj4l1uVe9z8AubhGgY87y1L2', 1, 0, 'https://img.olympicchannel.com/images/image/private/f_auto/t_1-1_300/primary/wfrhxc0kh2vvq77sonki');
+(1, '41142091', 'Elizabeth Doris ', 'Ponce', 'De la Cruz', '987137124', '1972-08-26', 0, 'dorisponce260872@gmail.com', '$2y$10$jTveLm1VKRfhxqONrsqB/unoIjGaFZhdsAQD9SYN9tm7Euj0QJ1BS', 1, 0, 'http://192.168.1.46/acevedoMediapp/imagenes/usuarios/41142091.jpg'),
+(2, '73122365', 'ramon', 'Acevedo', 'ponce', '982126861', '1999-05-30', 1, 'xdmigue22222@gmail.com', '$2y$12$DrwErevWQyRp.EBCpCYcoOO9uC8kQnohz8e9MaMOw/1blc5ZcgzOm', 2, 0, 'http://192.168.1.46/acevedoMediapp/imagenes/usuarios/73122365.jpg'),
+(3, '70854578', 'Kevin Marlon', 'Morales ', 'Martínez ', '965451278', '0000-00-00', 0, 'repartidor@rep.com', '$2y$12$tQwvBNVuUkIDRQL.qAy1.e1W.J4i33h9uzMJ3nzRz69SAUTbDgLsK', 2, 0, 'http://192.168.1.46/acevedoMediapp/imagenes/user_default.jpg');
 
 -- --------------------------------------------------------
 
@@ -187,17 +209,16 @@ CREATE TABLE `venta` (
   `total` double NOT NULL,
   `fecha` date NOT NULL,
   `hora` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `venta`
 --
 
 INSERT INTO `venta` (`id`, `id_cliente`, `longitud`, `latitud`, `persona_recepcion`, `celular`, `total`, `fecha`, `hora`) VALUES
-(1, 3, -75.20333882421255, -12.059827725582743, 'Suazo  Marticorena  pedro', 954784565, 5.4, '2022-11-24', '07:14:13'),
-(2, 1, -75.24285413324833, -12.081144101077742, 'Ponce De la Cruz Elizabeth Doris', 987137124, 125.8, '2022-11-24', '07:14:41'),
-(3, 1, -75.21038465201855, -12.068762869033861, 'Ponce De la Cruz Elizabeth Doris', 987137124, 6.18, '2022-11-25', '07:55:58'),
-(4, 1, -75.20807392895222, -12.063756969633676, 'Ponce De la Cruz Elizabeth Doris', 987137124, 253.8, '2022-11-25', '07:57:12');
+(5, 1, -75.2069004625082, -12.063659919572977, 'Ponce De la Cruz Elizabeth Doris ', 987137124, 4.12, '2022-12-03', '02:23:55'),
+(6, 1, -75.18517825752497, -12.02125585008175, 'Acevedo Ponce Miguel Angel', 982126861, 188.7, '2022-12-03', '03:50:50'),
+(7, 1, -75.18959367961357, -12.047984108876907, 'walter yaipen', 987456123, 253.8, '2022-12-03', '04:04:27');
 
 --
 -- Índices para tablas volcadas
@@ -216,6 +237,14 @@ ALTER TABLE `det_venta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_pedido` (`id_pedido`),
   ADD KEY `id_producto` (`id_producto`);
+
+--
+-- Indices de la tabla `pedidos_entregados`
+--
+ALTER TABLE `pedidos_entregados`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_pedido` (`id_pedido`),
+  ADD KEY `id_repartidor` (`id_repartidor`);
 
 --
 -- Indices de la tabla `productos`
@@ -257,7 +286,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `det_venta`
 --
 ALTER TABLE `det_venta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `pedidos_entregados`
+--
+ALTER TABLE `pedidos_entregados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -281,7 +316,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
@@ -293,6 +328,13 @@ ALTER TABLE `venta`
 ALTER TABLE `det_venta`
   ADD CONSTRAINT `det_venta_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `det_venta_ibfk_2` FOREIGN KEY (`id_pedido`) REFERENCES `venta` (`id`);
+
+--
+-- Filtros para la tabla `pedidos_entregados`
+--
+ALTER TABLE `pedidos_entregados`
+  ADD CONSTRAINT `pedidos_entregados_ibfk_1` FOREIGN KEY (`id_repartidor`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `pedidos_entregados_ibfk_2` FOREIGN KEY (`id_pedido`) REFERENCES `venta` (`id`);
 
 --
 -- Filtros para la tabla `productos`

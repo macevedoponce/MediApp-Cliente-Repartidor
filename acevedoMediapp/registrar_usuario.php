@@ -3,6 +3,8 @@
 include 'conexion.php';
 $json=array();
 
+
+
 if(isset($_GET["numDocumento"])){
     $correo=$_GET['correo'];
     $password=$_GET['password'];
@@ -15,14 +17,17 @@ if(isset($_GET["numDocumento"])){
     $genero=$_GET['genero'];
     $tipo_documento=$_GET['tipo_documento'];
     $numDocumento=$_GET['numDocumento'];
+    $img_url=$_GET['imagen'];
 
     $options = [
         'cost' => 12,
     ];
-
+ 
     $passHash =  password_hash($password,PASSWORD_BCRYPT,$options);
+    $url="http://192.168.1.46/acevedoMediapp/";
+    $imagen = $url.$img_url;
 
-    $consulta = "INSERT INTO user (`id`, `documento`, `nombres`, `apPaterno`, `apMaterno`, `celular`, `f_nacimiento`, `genero`, `correo`, `password`, `tipo_user`, `tipo_documento`) VALUES (NULL, '".$numDocumento."', '".$nombres."', '".$apPat."', '".$apMat."', '".$celular."', '".$f_nacimiento."', '".$genero."', '".$correo."', '".$passHash."', '".$tipo_user."', '".$tipo_documento."')";
+    $consulta = "INSERT INTO user (`id`, `documento`, `nombres`, `apPaterno`, `apMaterno`, `celular`, `f_nacimiento`, `genero`, `correo`, `password`, `tipo_user`, `tipo_documento`,`img_url`) VALUES (NULL, '".$numDocumento."', '".$nombres."', '".$apPat."', '".$apMat."', '".$celular."', '".$f_nacimiento."', '".$genero."', '".$correo."', '".$passHash."', '".$tipo_user."', '".$tipo_documento."', '$imagen')";
     $resultado_insert=mysqli_query($conexion,$consulta);
 
     if($resultado_insert){

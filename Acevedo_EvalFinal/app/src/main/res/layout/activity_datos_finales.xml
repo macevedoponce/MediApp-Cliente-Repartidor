@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".Mediapp.DatosFinales">
+
+    <LinearLayout
+        android:layout_weight="0.3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/DatosFinales"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnDocumento"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:text="@string/Documento"
+            android:textColor="#323232"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_light"
+            android:drawableRight="@drawable/ic_down"
+            app:strokeColor="#323232"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNumDocumento"
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_weight="0.8"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNumDocumento"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/poppins_light"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="8"
+                android:textSize="14sp"
+                android:hint="@string/NumDocumento"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkboxTerminos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/HeLeido"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text=" los "/>
+
+                    <TextView
+                        android:id="@+id/txtTerminosYCondiciones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/secondary"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/Terminos"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text=" y las "/>
+                    <TextView
+                        android:id="@+id/txtPoliticasDePrivacidad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/secondary"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/Politicas"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkboxUsoDatos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/HeLeido"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text=" el "/>
+
+                    <TextView
+                        android:id="@+id/txtUsoDeDatos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/secondary"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/UsoDeDatos"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnCrearCuentaFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_primary"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="16sp"
+            android:text="@string/CrearCuenta"/>
+        <TextView
+            android:id="@+id/txtVolverFinal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Volver"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/secondary"
+            />
+    </LinearLayout>
+
+</LinearLayout>

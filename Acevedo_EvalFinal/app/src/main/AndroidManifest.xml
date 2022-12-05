@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="acevedo.EvalFin.org">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:icon="@mipmap/principal"
+        android:roundIcon="@mipmap/principal_round"
+        android:supportsRtl="true"
+        android:theme="@style/Acevedo_EvalFinal_Principal"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MediappRepartidores.PedidosEntregados"></activity>
+        <activity android:name=".Mediapp.Legales" />
+        <activity android:name=".Mediapp.Politicas" />
+        <activity android:name=".Mediapp.AtencionCliente" />
+        <activity android:name=".Mediapp.buscarProducto" />
+        <activity android:name=".MediappRepartidores.RegistrarEntrega" />
+        <activity android:name=".MediappRepartidores.ComenzarEntrega" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".MediappRepartidores.verRutaPedido"
+            android:label="@string/title_activity_ver_ruta_pedido" />
+        <activity android:name=".Mediapp.MiHistorialPedidos" />
+        <activity android:name=".Mediapp.MisPedidos" />
+        <activity android:name=".Mediapp.MiPerfil" />
+        <activity android:name=".Mediapp.RegistrarCompraActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="acevedo.EvalFin.org.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".Mediapp.ubiClienteActivity" />
+        <activity android:name=".Mediapp.DetalleProductoActivity" />
+        <activity android:name=".Mediapp.ListProductosActivity" />
+        <activity android:name=".MediappRepartidores.MainActivityRepartidor" />
+        <activity android:name=".MediappRepartidores.LoginMediappRepartidor" />
+        <activity android:name=".MediappRepartidores.FinalRegistroRepartidor" />
+        <activity android:name=".Mediapp.FinalRegistro" />
+        <activity android:name=".Mediapp.DatosFinales" />
+        <activity android:name=".Mediapp.MoreInfo" />
+        <activity android:name=".Mediapp.CrearCuenta" />
+        <activity android:name=".Mediapp.LoginMediapp" />
+        <activity
+            android:name=".Mediapp.SplashMediapp"
+            android:exported="true"
+            android:icon="@mipmap/principal"
+            android:label="Mediapp"
+            android:roundIcon="@mipmap/principal"
+            android:taskAffinity="acevedo.EvalFin.org.SplashMediapp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MediappRepartidores.SplashMediappRepartidor"
+            android:exported="true"
+            android:icon="@mipmap/repartidor"
+            android:label="Mediapp Repartidor"
+            android:roundIcon="@mipmap/repartidor"
+            android:taskAffinity="acevedo.EvalFin.org.SplashMediappRepartidor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Mediapp.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

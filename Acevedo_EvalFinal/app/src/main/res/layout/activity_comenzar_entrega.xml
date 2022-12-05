@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MediappRepartidores.ComenzarEntrega">
+
+<!--    <fragment-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/map_ver_ruta"-->
+<!--        android:name="com.google.android.gms.maps.SupportMapFragment"/>-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mapa_entrega"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnRegistrarEntrega"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_secondary"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="@string/RegistrarEntrega" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

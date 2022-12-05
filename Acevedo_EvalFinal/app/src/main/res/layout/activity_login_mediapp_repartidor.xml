@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MediappRepartidores.LoginMediappRepartidor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/logorepartidor"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Media"
+                android:textSize="32sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/secondary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/App"
+                android:textSize="32sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/primary"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="253dp"
+            android:src="@drawable/repar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Iniciar"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/secondary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Sesion"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/primary"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtBienvenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loginmsj"
+            android:textSize="16dp"
+            android:fontFamily="@font/poppins_regular"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCorreo"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            style="@style/Widget.Design.TextInputLayout"
+            app:helperText="@string/helperEmail"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtCorreoLogRepartidor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:hint="@string/Correo"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            style="@style/Widget.Design.TextInputLayout"
+            app:endIconMode="password_toggle"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPasswordRepartidor"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/poppins_light"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/Password"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btnEntrarRepartidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:background="@drawable/btn_primary"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:text="@string/Entrar" />
+
+        <TextView
+            android:id="@+id/txtCrearCuentaRepartidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CrearCuenta"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

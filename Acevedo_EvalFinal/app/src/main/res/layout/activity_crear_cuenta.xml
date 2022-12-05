@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Mediapp.CrearCuenta">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Crear"
+            android:textSize="40sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/secondary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Cuenta"
+            android:textSize="40sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/primary"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCorreoCreate"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            style="@style/Widget.Design.TextInputLayout"
+            app:helperText="@string/helperEmail"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtCorreoCreate"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/poppins_light"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="@string/Correo"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPasswordCreate"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            style="@style/Widget.Design.TextInputLayout"
+            app:endIconMode="password_toggle"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPasswordCreate"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/poppins_light"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/Password"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilRepetirPasswordCreate"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            style="@style/Widget.Design.TextInputLayout"
+            app:endIconMode="password_toggle"
+
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtRepetirPasswordCreate"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/poppins_light"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/RepPassword"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="top|center">
+
+        <Button
+            android:id="@+id/btnSiguiente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_primary"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="14sp"
+            android:text="@string/Siguiente"/>
+        <TextView
+            android:id="@+id/txtCancelar"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Cancelar"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/secondary"
+            />
+    </LinearLayout>
+
+</LinearLayout>

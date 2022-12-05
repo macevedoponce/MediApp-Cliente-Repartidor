@@ -26,14 +26,20 @@ if(isset($_GET["id_cliente"])){
         if($registro=mysqli_fetch_array($nuevo_resultado)){
             $id_pedido = $registro['venta'];
         }
-        $consulta = "INSERT INTO det_venta (`id`, `id_pedido`, `id_producto`, `cantidad`) VALUES (NULL, '".$id_pedido."', '".$id_producto."', '".$cantidad."')";
 
+        $consulta = "INSERT INTO det_venta (`id`, `id_pedido`, `id_producto`, `cantidad`) VALUES (NULL, '".$id_pedido."', '".$id_producto."', '".$cantidad."')";
         $resultado=mysqli_query($conexion,$consulta);
 
         $consulta="SELECT * FROM det_venta WHERE id_pedido = '{$id_pedido}'";
             $resultado=mysqli_query($conexion,$consulta);
             
             if($registro=mysqli_fetch_array($resultado)){
+
+                //agrega una lista de espera de entrega de pedidos
+                $consulta1 = "INSERT INTO `pedidos_entregados` (`id`, `id_pedido`, `id_repartidor`, `img_url`, `estado`) VALUES (NULL, '$id_pedido', NULL, NULL, '0')";
+                mysqli_query($conexion,$consulta1);
+                //fin de lista de espera de entrega de pedidos
+
                 $json['det_venta'][]=$registro;
             }
             mysqli_close($conexion);
